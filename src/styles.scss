@@ -1,0 +1,11 @@
+@import "./scss/variable-bootstrap";
+@import 'bootstrap/scss/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons";
+
+//Components
+@import './scss/components/post';
+
+
+.cursor-pointer{
+    cursor: pointer;
+}

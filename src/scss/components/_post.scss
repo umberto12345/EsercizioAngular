@@ -1,0 +1,89 @@
+.list-post {
+  &:last-child .post {
+    @extend .border-0;
+  }
+
+  &:not(.grid-card) {
+    .post {
+      @extend .d-flex;
+      @extend .align-items-center;
+      .grid-trash{
+        @extend .d-none;
+      }
+    }
+  }
+
+  &.grid-card {
+
+    .post {
+
+      @extend .p-4;
+      @extend .h-100;
+      @extend .shadow;
+      @extend .border-0;
+      
+      .inline-trash{
+        @extend .d-none;
+      }
+
+    }
+  }
+
+  .post {
+    border-color: #eeeeee;
+
+    @extend .pt-3;
+    @extend .border-bottom;
+ 
+    .square {
+      background: var(--bs-primary);
+      height: 50px;
+      width: 50px;
+      min-width: 50px;
+
+      @extend .rounded;
+      @extend .me-4;
+
+    }
+  }
+
+  &.advance {
+    .post {
+      .title {
+        color: var(--bs-primary);
+      }
+
+      .square {
+        color: $white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .username {
+        color: var(--bs-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.dialog-post {
+  .list-post {
+
+    .post {
+      @extend .p-0;
+      @extend .border-0;
+
+      .square {
+        @extend .d-none;
+      }
+    }
+  }
+
+}
+
+.username-paragraph{
+  font-size: 0.75rem;
+}

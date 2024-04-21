@@ -1,0 +1,27 @@
+<div class="post">
+    <div *ngIf="canDelete" class="text-end grid-trash">
+        <i (click)="deletePost()" class="bi bi-trash fs-2 text-danger cursor-pointer "></i>
+    </div>
+    <div (click)="detail()" class="square  d-none d-md-flex align-items-center justify-content-center">
+        <ng-container *ngIf="userInitials">
+            <h3 class="m-0">{{userInitials}}</h3>
+        </ng-container>
+    </div>
+    
+    <div class="card-body-post w-100">
+        
+        <p class="m-0 username-paragraph" *ngIf="name && username" >Post pubblicato da: {{name}} alias <span
+                class="username ">{{username}}</span></p>
+
+        <h2 class="title text-break"  *ngIf="title">{{title}}</h2>
+        <p *ngIf="body">
+            {{body}}
+        </p>
+        <p *ngIf="username && !name" class="cursor-pointer username-paragraph" (click)="userRedirect()">
+            pubblicato da: <span class="username">{{username}} </span>
+        </p>
+    </div>
+    <div *ngIf="canDelete" class="inline-trash">
+        <i (click)="deletePost()" class="bi bi-trash fs-2 text-danger cursor-pointer "></i>
+    </div>
+</div>
