@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="input-group mb-3">
+      <input [formControl]="inputSearch" type="text" class="form-control" placeholder="Cerca per titolo o nome utente"
+        aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 d-flex justify-content-end fs-2">
+    <i title="Griglia" (click)="col = 'col-12 col-md-6 col-lg-4 col-xxl-3 grid-card'"
+      class="bi bi-grid primary-color me-2 cursor-pointer"></i>
+    <i title="In Linea" (click)="col = 'col-12'" class="bi bi-list primary cursor-pointer"></i>
+  </div>
+</div>
+
+
+<div class="row g-3">
+  <div class="{{col}} list-post advance" *ngFor="let post of posts">
+    <app-card-post [body]="post.body" (userRedirectEvent)="userRedirectEvent(post)" [canDelete]="true" (deleteEvent)="deletePost(post)"
+      (detailEvent)="detail(post)" [userInitials]="post.user?.initials" [username]="post.user?.username"
+      [title]="post.title"></app-card-post>
+  </div>
+</div>
